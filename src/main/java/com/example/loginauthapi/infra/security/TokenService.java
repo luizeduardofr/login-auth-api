@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 @Service
-public class TokerService {
+public class TokenService {
     @Value("${api.security.token.secret}")
     private String secret;
     public String generateToken(User user) {
@@ -45,6 +45,6 @@ public class TokerService {
     }
 
     private Instant generateExpirationDate() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-3hours"));
+        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
 }
